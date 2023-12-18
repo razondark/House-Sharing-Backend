@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/House-Sharing</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">razondark</property>
+
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Configure connection pool -->
+        <property name="hibernate.connection.pool_size">20</property>
+        <property name="hibernate.connection.timeout">1000</property>
+
+        <!-- Disable the second-level cache -->
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mapping files -->
+        <mapping class="org.example.model.Client"/>
+        <mapping class="org.example.model.House"/>
+        <mapping class="org.example.model.RentedHouse"/>
+    </session-factory>
+</hibernate-configuration>
