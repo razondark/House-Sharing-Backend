@@ -1,6 +1,6 @@
-package org.example.springConfig;
+package org.example.config;
 
-import org.example.hibernateConnector.HibernateSessionController;
+import org.example.hibernateController.HibernateSessionController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

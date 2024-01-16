@@ -7,6 +7,10 @@
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">razondark</property>
 
+        <!--        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>-->
+        <!--        <property name="hibernate.connection.url">jdbc:postgresql://postgres:5432/House-Sharing</property>-->
+        <!--        <property name="hibernate.connection.username">postgres</property>-->
+        <!--        <property name="hibernate.connection.password">razondark</property>-->
 
         <!-- Enable Hibernate's automatic session context management -->
         <property name="hibernate.current_session_context_class">thread</property>

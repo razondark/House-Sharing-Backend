@@ -1,4 +1,4 @@
-package org.example.hibernateConnector;
+package org.example.hibernateController;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -6,9 +6,9 @@ import org.hibernate.cfg.Configuration;
 
 @SuppressWarnings("unused")
 public class HibernateSessionController {
-    private static final SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
-    static {
+    public HibernateSessionController() {
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
         } catch (Throwable ex) {
@@ -17,17 +17,17 @@ public class HibernateSessionController {
         }
     }
 
-    public static Session openSession() {
+    public Session openSession() {
         return sessionFactory.openSession();
     }
 
-    public static void closeSession(Session session) {
+    public void closeSession(Session session) {
         if (session != null) {
             session.close();
         }
     }
 
-    public static void closeSessionFactory() {
+    public void closeSessionFactory() {
         if (sessionFactory != null) {
             sessionFactory.close();
         }

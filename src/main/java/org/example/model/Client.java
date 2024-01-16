@@ -34,6 +34,9 @@ public class Client {
     @Column(name = "balance", nullable = false)
     private BigDecimal balance = BigDecimal.ZERO;
 
+    @Column(name = "photo_link")
+    private String photoLink;
+
     public Long getId() {
         return id;
     }
@@ -90,6 +93,14 @@ public class Client {
         this.balance = balance;
     }
 
+    public String getPhotoLink() {
+        return photoLink;
+    }
+
+    public void setPhotoLink(String photoLink) {
+        this.photoLink = photoLink;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(login, password, status, phoneNumber, balance);
@@ -116,8 +127,7 @@ public class Client {
     public String toString() {
         try {
             return new ObjectMapper().writeValueAsString(this);
-        }
-        catch (JsonProcessingException e) {
+        } catch (JsonProcessingException e) {
             return e.getMessage();
         }
     }

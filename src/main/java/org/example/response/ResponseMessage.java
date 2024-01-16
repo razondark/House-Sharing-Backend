@@ -9,6 +9,7 @@ public enum ResponseMessage {
     INCORRECT_PASSWORD("Incorrect password"),
     LOGIN_OR_PHONE_NUMBER_ALREADY_EXISTS("Login or phone number already exists"),
     HOUSE_ALREADY_EXISTS("House already exists"),
+    DEAL_ALREADY_EXISTS("Deal already exists"),
     HOUSES_NOT_FOUND("Houses not found"),
     NO_DIFFERENCE_BETWEEN_DATA("No difference between new and old data"),
     HOUSE_NOT_FOUND("House not found"),
@@ -23,6 +24,7 @@ public enum ResponseMessage {
     public String getJSON() {
         class MessageObject {
             public final String message;
+
             MessageObject(String message) {
                 this.message = message;
             }
@@ -30,8 +32,7 @@ public enum ResponseMessage {
 
         try {
             return new ObjectMapper().writeValueAsString(new MessageObject(this.message));
-        }
-        catch (JsonProcessingException e) {
+        } catch (JsonProcessingException e) {
             return e.getMessage();
         }
     }

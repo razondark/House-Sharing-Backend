@@ -43,7 +43,7 @@ public class House {
     @Column(name = "discount_price", precision = 8, scale = 2)
     private BigDecimal discountPrice;
 
-    @Column(name = "map_location" , nullable = false, columnDefinition = "NUMERIC(10,7)[]")
+    @Column(name = "map_location", nullable = false, columnDefinition = "NUMERIC(10,7)[]")
     private BigDecimal[] mapLocation;
 
     @Column(name = "addition_date", nullable = false, columnDefinition = "TIMESTAMP")
@@ -125,6 +125,7 @@ public class House {
     public void setDiscountPrice(BigDecimal discountPrice) {
         this.discountPrice = discountPrice;
     }
+
     public BigDecimal[] getMapLocation() {
         return mapLocation;
     }
@@ -179,8 +180,7 @@ public class House {
     public String toString() {
         try {
             return new ObjectMapper().writeValueAsString(this);
-        }
-        catch (JsonProcessingException e) {
+        } catch (JsonProcessingException e) {
             return e.getMessage();
         }
     }
