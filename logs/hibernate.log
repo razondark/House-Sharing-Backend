@@ -1,0 +1,36 @@
+2024-янв.-17 14:24:27 PM [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-янв.-17 14:24:27 PM [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-янв.-17 14:24:28 PM [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-янв.-17 14:24:28 PM [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2024-янв.-17 14:24:28 PM [main] INFO  org.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/House-Sharing]
+2024-янв.-17 14:24:28 PM [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres, timeout=1000}
+2024-янв.-17 14:24:28 PM [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-янв.-17 14:24:28 PM [main] INFO  org.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-янв.-17 14:24:29 PM [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@66130c3b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-янв.-17 14:24:40 PM [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.balance,
+        c1_0.email,
+        c1_0.login,
+        c1_0.password,
+        c1_0.phone_number,
+        c1_0.photo_link,
+        c1_0.status 
+    from
+        Client c1_0 
+    where
+        c1_0.id=?
+2024-янв.-17 14:24:40 PM [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* update
+        for org.example.model.Client */update Client 
+    set
+        balance=?,
+        email=?,
+        login=?,
+        password=?,
+        phone_number=?,
+        photo_link=?,
+        status=? 
+    where
+        id=?
