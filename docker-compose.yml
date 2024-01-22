@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  postgres:
+    image: db
+    environment:
+      POSTGRES_DB: House-Sharing
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: razondark
+    ports:
+      - "5432:5432"
+    networks:
+      - default
+
+  backend:
+    image: backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    restart: on-failure
+    networks:
+      - default
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    driver: bridge
